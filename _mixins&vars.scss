@@ -1,0 +1,21 @@
+//center horizontally
+@mixin makeCol{
+    display: flex;
+    flex-direction: column;
+}
+@mixin alignCenter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin alignVertically{
+    display: flex;
+    align-items: center;
+}
+
+$classicBlue: rgb(54,82,212); 
+$leftPadding: 40px;
+$bodyFontSize: 50px;
+$viewportWidth: 1080px;
+$minimalPadding: 14px;

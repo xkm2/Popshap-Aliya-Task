@@ -1,0 +1,18 @@
+
+@import './_mixins&vars.scss';
+
+body{
+  backdrop-filter: brightness(120%);
+  filter: brightness(100%);
+  width: 1080px;
+  height: 1920px;
+  background-image: linear-gradient($classicBlue 20%, rgb(14,21,56));
+  color: white;
+  font-family: "SF Pro Display",sans-serif!important;
+  border: solid 2px black;
+  font-size: $bodyFontSize;
+}
+
+@import './title&Pages';
+@import './addScore';
+@import './showScores';

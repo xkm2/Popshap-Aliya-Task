@@ -1,0 +1,38 @@
+.titleBar, .center-button{
+    @include makeCol;
+    align-items: center;
+    .img{
+        height: 140px;
+        width: 420px;
+        margin-top: 100px;
+    }
+}
+
+.page-center{
+    padding-left: $leftPadding;
+    padding-right: $leftPadding * 2;
+}
+
+.button{
+    @extend .titleBar;
+    
+    height: $bodyFontSize*3;
+    width: $viewportWidth / 7 * 3;
+    color: $classicBlue;
+    border-radius: 10px;
+    @include alignCenter;
+    font-size: $bodyFontSize;
+    font-weight: bold;
+    &:hover{
+        box-shadow: 0px 0px 20px mix(white, $classicBlue, 30);
+        cursor: pointer;
+    }
+}
+
+.big{
+    font-size: 150px;
+    font-weight: bold;
+    line-height: 150px;
+}
+
+

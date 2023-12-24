@@ -1,0 +1,80 @@
+
+.form{
+    @include makeCol;
+
+}
+
+.page-center{
+    display: flex;
+    flex-direction: column;
+    margin-left: $bodyFontSize/2;
+    margin-right: $bodyFontSize
+    
+}
+
+
+input:not(.scoreInput){
+    height: $bodyFontSize*2;
+    font-size: $bodyFontSize;
+    background-color: mix(lightGray, rgb(54,82,212), 25);
+    padding-left: 20px;
+    
+    
+}
+label{
+    padding-bottom: $minimalPadding;
+    padding-top: $minimalPadding*3;
+    
+}
+input{
+    outline: none;
+    border: none;
+}
+input:focus {
+    outline: none;
+    // box-shadow: 0px 0px 4px mix(white, $classicBlue, 30);
+  }
+
+  input::placeholder{
+    font-size: $bodyFontSize;
+    color: lightGray;
+    
+}
+
+.scoreInput{
+    height: $bodyFontSize*4;
+    width: 45%;
+    margin-bottom: $minimalPadding*8;
+
+    text-align: left;
+    padding-left: 24px;
+    font-size: $bodyFontSize*2 !important;
+    
+    
+
+    &::placeholder{
+   
+        
+        text-align: center;
+        font-size: $bodyFontSize*2;
+         
+    }  
+}
+
+.addScore-headline{
+    margin-top: $bodyFontSize*3;
+}
+
+@for $i from 1 through 3{
+ 
+    .inp#{$i}{
+        background-color: mix(lightGray, $classicBlue, 40-$i*6)
+    }
+  
+}
+
+input:invalid {
+    font-size: $bodyFontSize;
+    color: red;
+  }
+

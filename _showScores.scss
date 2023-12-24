@@ -1,0 +1,45 @@
+.articles{
+    height: $bodyFontSize*2;
+    @include alignVertically;
+    
+    p{
+        font-size: $bodyFontSize;
+        display: inline-block;
+    }
+
+}
+//names and score bar
+.name{
+    text-align: left;
+    width: 75%;
+}
+
+.score{
+    text-align: right;
+    width: 25%;
+    color: #fcd44a;
+    font-weight: bold;
+}
+
+.scores-headline{
+    margin-bottom: $bodyFontSize*2;
+    margin-top: $bodyFontSize*2.5;
+
+}
+
+@for $i from 0 through 5{
+    @if($i % 2 == 0){
+        .color#{$i}{
+            background-color: mix(lightGray, $classicBlue, 16-$i*2)
+        }
+    }
+}
+
+.rightLeftPadding{
+    padding-right: $bodyFontSize*1.5;
+    padding-left: $bodyFontSize;
+}
+
+.addScore-button{
+  margin-top: $bodyFontSize*3;
+}
