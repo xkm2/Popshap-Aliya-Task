@@ -12,13 +12,13 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = ({ colRef }) => {
-
+    //state
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [score, setScore] = useState<any>('');
 
 
-    //submit function
+    //submit function (sends user info to database) when user clicks button
     const sendToDatabase = useCallback(() => {
         
         console.log("sending to database!")

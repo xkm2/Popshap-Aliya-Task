@@ -46,7 +46,7 @@ describe('testing AddScorePage', () => {
         expect(addScorePage.getByLabelText('Score').value).toBe('100');
     });
 
-    test('displays the correct input values', () => {
+    test('correct piece of state updates when user changes input', () => {
         fireEvent.change(addScorePage.getByLabelText('First name'), {target: {value: 'John'}});
         expect(props.setFirstName).toHaveBeenCalledWith('John');
 

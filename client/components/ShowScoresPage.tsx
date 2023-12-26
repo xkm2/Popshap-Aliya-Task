@@ -34,7 +34,7 @@ const ShowScoresPage: React.FC<AppProps> = ({ colRef }) => {
     fetchData();
   }, []);
 
-  //make array of article elements to display 5 profiles
+//make array of article elements to display 5 profiles
  const profileArticles = [];
 
  for (let i = 0; i < profiles.length; i++){

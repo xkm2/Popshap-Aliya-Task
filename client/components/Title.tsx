@@ -13,8 +13,7 @@ const Title = memo(() => {
             </div>
   
         </>
-
-        
+  
     )
 
 });

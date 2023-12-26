@@ -21,10 +21,9 @@ const AddScorePage: React.FC<AppProps> = ({ colRef,
   firstName,
   lastName,
   score}) => { 
-  //state
-  
 
   
+ 
   //resetting state once user makes input
   function inputHandler(event: React.ChangeEvent<HTMLInputElement>){
     event.preventDefault();
