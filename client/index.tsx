@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 import '../style.scss';
 
@@ -40,6 +41,6 @@ getDocs(colRef)
 
 
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-    <App colRef={colRef}/>
-);
+ReactDOM.createRoot(document.getElementById('root')!).render(<App colRef={colRef} />);
+
+export default colRef;

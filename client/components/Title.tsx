@@ -1,7 +1,16 @@
 import React, {useState} from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const Title = () => {
+
+    const navigate = useNavigate();
+
+    //redirect to prev page
+    function reDirect(){
+    
+        navigate("scores");
+
+    }
 
     //popshap icon
     return (

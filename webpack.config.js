@@ -27,7 +27,8 @@ module.exports = {
                     options: {
                         presets: [
                             '@babel/env',
-                            '@babel/react'
+                            '@babel/react',
+                            '@babel/preset-react'
                         ]
                     },
                     

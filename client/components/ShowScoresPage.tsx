@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { CollectionReference, getDocs } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom'
 
 //type for AppProps
 interface AppProps {
@@ -14,6 +13,7 @@ interface Profile {
   score: number;
   lastName: string;
 }
+
 
 const ShowScoresPage: React.FC<AppProps> = ({ colRef }) => { 
   const [profiles, setProfiles] = useState<Profile[]>([]);
@@ -43,18 +43,7 @@ const ShowScoresPage: React.FC<AppProps> = ({ colRef }) => {
     </article>
   )
  }
-
- const navigate = useNavigate();
-
- //redirect to prev page
- function reDirect(){
-  
-  navigate("/");
-
- }
-
-
-
+ 
   return (
     <>
       {/* Render your profiles here */}
@@ -63,9 +52,7 @@ const ShowScoresPage: React.FC<AppProps> = ({ colRef }) => {
           Current<br/>Scores.
         </div>
         {profileArticles}
-        <div className="center-button">
-            <button onClick={reDirect} className="button addScore-button">Add a Score</button>
-        </div>
+        
           
       </div>
       

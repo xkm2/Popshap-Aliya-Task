@@ -1,19 +1,29 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom'
-import { CollectionReference, addDoc } from 'firebase/firestore';
+
+import { CollectionReference } from 'firebase/firestore';
 
 
 // type for AppProps
 interface AppProps {
   colRef: CollectionReference;
+  setFirstName: any;
+  setLastName: any;
+  setScore: any;
+  firstName: any;
+  lastName: any;
+  score: any;
 } 
 
-const AddScorePage: React.FC<AppProps> = ({ colRef }) => { 
+const AddScorePage: React.FC<AppProps> = ({ colRef,
+  setFirstName,
+  setLastName,
+  setScore,
+  firstName,
+  lastName,
+  score}) => { 
   //state
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [score, setScore] = useState<any>();
-  const navigate = useNavigate();
+  
+
   
   //resetting state once user makes input
   function inputHandler(event: React.ChangeEvent<HTMLInputElement>){
@@ -31,21 +41,13 @@ const AddScorePage: React.FC<AppProps> = ({ colRef }) => {
         break;
     }
   }
-  //submit function
-  function sendToDatabase(event: React.FormEvent<HTMLFormElement>){
-    event.preventDefault();
-    
-    console.log("sending to database!")
-    addDoc(colRef, { firstName, lastName, score: Number(score)});
-    navigate('/scores')
-
-  }
+  
 
   return (
   
       <div className="page-center">
         <div className="big addScore-headline">Add a<br/>Score.</div>
-        <form className="form" onSubmit={sendToDatabase}>
+        <form className="form">
           <label htmlFor="firstName">First name<br/></label>
             <input type="text" id="firstName" className="inp1"
             value={firstName} required
@@ -63,10 +65,6 @@ const AddScorePage: React.FC<AppProps> = ({ colRef }) => {
             placeholder="0"
             pattern="[0-9]*"
             onInput={inputHandler}></input>
-          
-          <div className="center-button">
-            <button className="button">Submit</button>
-          </div>
           
         </form>
       </div>
