@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import AddScorePage from './components/AddScorePage';
 import ShowScoresPage from './components/ShowScoresPage';
 import Title from './components/Title';
@@ -19,14 +19,14 @@ const App: React.FC<AppProps> = ({ colRef }) => {
 
 
     //submit function
-    function sendToDatabase(){
+    const sendToDatabase = useCallback(() => {
         
         console.log("sending to database!")
         addDoc(colRef, { firstName, lastName, score: Number(score)});
         setFirstName('');
         setLastName('');
         setScore('');
-    }
+    }, []);
 
     
     return (

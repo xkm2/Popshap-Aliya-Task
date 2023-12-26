@@ -17,6 +17,7 @@ interface Profile {
 
 const ShowScoresPage: React.FC<AppProps> = ({ colRef }) => { 
   const [profiles, setProfiles] = useState<Profile[]>([]);
+  
 
   //get profiles from database, find highest five scores
   useEffect(() => {
@@ -43,7 +44,7 @@ const ShowScoresPage: React.FC<AppProps> = ({ colRef }) => {
     </article>
   )
  }
- 
+
   return (
     <>
       {/* Render your profiles here */}

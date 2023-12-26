@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, memo} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // type for AppProps
@@ -6,7 +6,8 @@ interface AppProps {
     sendToDatabase: any;
   } 
 
-const Button: React.FC<AppProps> = ({ sendToDatabase }) => {
+const Button: React.FC<AppProps> = memo(({ sendToDatabase }) => {
+    console.log('button is rendering again!');
 
     const [showScores, setShowScores] = useState(true);
 
@@ -38,6 +39,6 @@ const Button: React.FC<AppProps> = ({ sendToDatabase }) => {
         
     )
 
-}
+});
 
 export default Button;

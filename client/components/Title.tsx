@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, memo} from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
-const Title = () => {
+const Title = memo(() => {
+    console.log('title is rendering again!');
 
     const navigate = useNavigate();
 
@@ -25,6 +26,6 @@ const Title = () => {
         
     )
 
-}
+});
 
 export default Title;
