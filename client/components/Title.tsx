@@ -1,17 +1,8 @@
-import React, {useState, memo} from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import React, {memo} from 'react';
+
 
 const Title = memo(() => {
     console.log('title is rendering again!');
-
-    const navigate = useNavigate();
-
-    //redirect to prev page
-    function reDirect(){
-    
-        navigate("scores");
-
-    }
 
     //popshap icon
     return (
@@ -20,7 +11,7 @@ const Title = memo(() => {
 
                 <img className="img" src='images/logo.png'></img>
             </div>
-            <Outlet />
+  
         </>
 
         
