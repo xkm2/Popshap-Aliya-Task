@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 // type for AppProps
 interface AppProps {
-    sendToDatabase: any;
-  } 
+    sendToDatabase: Function;
+} 
 
 const Button: React.FC<AppProps> = memo(({ sendToDatabase }) => {
     console.log('button is rendering again!');

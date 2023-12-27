@@ -6,41 +6,17 @@ import { CollectionReference } from 'firebase/firestore';
 // type for AppProps
 interface AppProps {
   colRef: CollectionReference;
-  setFirstName: any;
-  setLastName: any;
-  setScore: any;
-  firstName: any;
-  lastName: any;
+  inputHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  firstName: string;
+  lastName: string;
   score: any;
 } 
 
 const AddScorePage: React.FC<AppProps> = ({ colRef,
-  setFirstName,
-  setLastName,
-  setScore,
+  inputHandler,
   firstName,
   lastName,
   score}) => { 
-
-  
- 
-  //resetting state once user makes input
-  function inputHandler(event: React.ChangeEvent<HTMLInputElement>){
-    event.preventDefault();
-
-    switch(event.target.id){
-      case "firstName":
-        setFirstName(event.target.value);
-        break;
-      case "lastName":
-        setLastName(event.target.value);
-        break;
-      case "score":
-        setScore(event.target.value);
-        break;
-    }
-  }
-  
 
   return (
   

@@ -28,6 +28,23 @@ const App: React.FC<AppProps> = ({ colRef }) => {
         setScore('');
     }, []);
 
+    //resetting state once user makes input
+  function inputHandler(event: React.ChangeEvent<HTMLInputElement>){
+    event.preventDefault();
+
+    switch(event.target.id){
+      case "firstName":
+        setFirstName(event.target.value);
+        break;
+      case "lastName":
+        setLastName(event.target.value);
+        break;
+      case "score":
+        setScore(event.target.value);
+        break;
+    }
+  }
+
     
     return (
         <BrowserRouter>
@@ -38,9 +55,7 @@ const App: React.FC<AppProps> = ({ colRef }) => {
             firstName={firstName}
             lastName={lastName}
             score={score}
-            setFirstName={setFirstName}
-            setLastName={setLastName}
-            setScore={setScore}
+            inputHandler={inputHandler}
             colRef={colRef}/>} />
             <Route path="scores" element={<ShowScoresPage colRef={colRef}/>} />
       
