@@ -1,5 +1,5 @@
 import React, {useState, memo} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 // type for AppProps
 interface AppProps {
@@ -7,32 +7,31 @@ interface AppProps {
 } 
 
 const Button: React.FC<AppProps> = memo(({ sendToDatabase }) => {
+
+    
     console.log('button is rendering again!');
 
-    const [showScores, setShowScores] = useState(true);
+    const { pathname } = useLocation();
+    console.log('location', location)
 
     const navigate = useNavigate();
 
     //redirect to prev page
     function reDirect() {
-    
-        setShowScores(currentShowScores => {
-            if (currentShowScores) {
-                sendToDatabase();
-                navigate("scores");
-            } else {
-                navigate("/");
-            }
-    
-            return !currentShowScores;
-        });
+
+        if (pathname === '/') {
+            sendToDatabase();
+            navigate("scores");
+        } else {
+            navigate("/");
+        }
     }
 
     //popshap icon
     return (
         <>
             <div className="center-button">
-                <button onClick={reDirect} className="button addScore-button">Add a Score</button>
+                <button onClick={reDirect} className="button addScore-button">{pathname === '/' ? 'Add a Score' : 'Submit'}</button>
             </div>
         </>
 
